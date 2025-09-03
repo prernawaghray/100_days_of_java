@@ -1,28 +1,17 @@
-package src.day1_5; 
+package day1_5; 
 import java.util.Scanner;
-import src.day1.BandNameGenerator;
 
 public class BandBudgetCalculator {
     public static void main(String[] args) {
         System.out.println("Welcome to the Band Budget Calculator!");
-        BandNameGenerator bandName = new BandNameGenerator();
         Scanner scanner = new Scanner(System.in);
-        /*
-         * === BAND NAME GENERATION ===
-What's your hometown? Seattle
-What's your favorite animal? Wolf
-🎸 Your band name: "Seattle Wolf" 🎸
-
-=== BUDGET ANALYSIS ===
-What's your monthly income? $3500
-What are your monthly expenses? $2800
-How much do you estimate band startup costs? $5000
-
-💰 FINANCIAL REPORT 💰
-Monthly surplus: $700.00
-Months to save for band: 8 months
-Recommendation: You can start "Seattle Wolf" in 8 months! 🎉
-         */
+        System.out.println("=== BAND NAME GENERATION ===");
+        System.out.print("What's the name of the city you grew up in? ");
+        String city = scanner.nextLine();
+        System.out.print("What's your pet's name? ");
+        String pet = scanner.nextLine();
+        String bandName = city + " " + pet;
+        System.out.println("🎸 Your band name: \"" + bandName + "\" 🎸");
         System.out.println("=== BUDGET ANALYSIS ===");
         System.out.println("What's your monthly income? $");
         String incomeStr = scanner.nextLine();
@@ -36,8 +25,9 @@ Recommendation: You can start "Seattle Wolf" in 8 months! 🎉
 
         System.out.println("\uD83D\uDCB0 FINANCIAL REPORT \uD83D\uDCB0");
         System.out.println("Monthly surplus: $" + (income - monthlyExpenses));
-        System.out.println("Months to save for band: %d months".formatted(startupCosts/(income - monthlyExpenses)));
-        System.out.println("Recommendation: You can start %s in %d months \uD83C\uDF89".formatted(bandName, (int)(startupCosts / (income - monthlyExpenses)));
+        System.out.println("Months to save for band: %d months".formatted((int)(startupCosts/(income - monthlyExpenses))));
+        System.out.println("Recommendation: You can start %s in %d months \uD83C\uDF89".formatted(bandName, (int)(startupCosts / (income - monthlyExpenses))));
+        scanner.close();
     }
     
 }

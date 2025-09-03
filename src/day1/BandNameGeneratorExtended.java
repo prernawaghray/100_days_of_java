@@ -1,4 +1,4 @@
-package src.day1;  
+package day1;  
 
 /* 
 1. **Challenge 1**: Add more inputs (favorite color, birth month) for more creative names

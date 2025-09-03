@@ -1,4 +1,4 @@
-package src.day1; 
+package day1; 
 import java.util.Scanner;
 
 public class BandNameGenerator {
