@@ -20,6 +20,7 @@ public class TipCalculatorExtended {
             tax = Float.parseFloat(taxStr);
         } catch (Exception e) {
             System.out.println("Enter valid values." + e.getMessage());
+            scanner.close();
             return;
         }
         float taxAmount = bill * (tax / 100.0f);
@@ -47,18 +48,9 @@ public class TipCalculatorExtended {
             tip = Float.parseFloat(tipStr);
         } catch (Exception e) {
             System.out.println("Enter valid values." + e.getMessage());
+            scanner.close();
             return;
         }
-        /*📊 FINAL BILL BREAKDOWN:
-========================
-Original Bill:     $85.50
-Tax (8.5%):        $7.27
-Subtotal:          $92.77
-Tip (18%):         $15.39
-------------------------
-TOTAL:             $108.16
-Per Person:        $27.04
-======================== */
         //calculations 
         float tipAmount = bill * tip / 100.0f;
         float totalBill = bill + taxAmount + tipAmount;
